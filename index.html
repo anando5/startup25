@@ -1,102 +1,594 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My First Bitstarter</title>
-    <link type="text/css" rel="stylesheet" 
-          href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
-      .container {
-        width: 960px;
-      }
-      p.lead {
-        padding-top: 15px;
-      }
-      .navigation, .pitch, .section1, .section2, .faq, .footer {
-        padding: 10px 0px 10px 0px;
-      }
-      .video, .thermometer, .order, .social {
-        border: 1px dotted;
-        text-align: center;
-      }
-      .video {
-        /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
-        height: 124px;
-        line-height: 124px;
-      }
-      .thermometer, .order, .social {
-        /* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html */
-        height: 40px;
-        line-height: 40px;
-      }
-      div.row {
-        border: 1px solid;
-      }
+    <title>2.5 Startups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+        <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>    
+   <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
+          rel="stylesheet" type="text/css">
+       <style type="text/css">
+/* Large desktop */
+@media (min-width: 980px) { 
+ body {
+    padding-top: 40px;
+ }
+ .linediv-l {
+    border-right: 1px white solid;
+  }
+  .linediv-r {
+    border-left: 1px white solid;
+  }
+ }
+
+ /* Landscape phones and down */
+@media (max-width: 480px) { 
+ .copy {
+    padding: 2.5% 10%;
+  }
+ .linediv-l {
+    border-bottom: 1px white solid;
+  }
+ .linediv-r {
+    border-top: 1px white solid;
+  }
+ }
+
+/* iPads */ 
+@media (max-width: 979px) {
+ body {
+	padding-left: 0;
+	padding-right: 0;
+ }
+ .container .container-image .container-panel {
+	padding-left: 20px;
+	padding-right: 20px;
+  }
+ .navbar-fixed-top {
+	margin-bottom: 0px;
+ }
+ .jumbotron {
+	padding: 20px 20px 20px 20px;
+ }
+ .copy {
+    padding: 2.5% 10%;
+  }
+ .linediv-l {
+    border-bottom: 1px white solid;
+  }
+ .linediv-r {
+    border-top: 1px white solid;
+  }
+ }
+
+
+@media (max-width: 767px) {
+ .navbar-fixed-top .navbar-inner {
+	padding-left: 30px;
+	padding-right: 30px;
+ }
+  .copy {
+    padding: 2.5% 10%;
+  }
+ .linediv-l {
+    border-bottom: 1px white solid;
+  }
+ .linediv-r {
+    border-top: 1px white solid;
+  }
+ }
+
+
+/* All form factors */
+
+/* Main body and headings */
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+  
+/* Custom container */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 760px;
+}
+
+.container-narrow-top {
+    margin: 0 auto;
+    max-width: 760px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #0C0D11;
+    background-color: #EEEEEE;
+    padding: 20px 0px 20px 0px;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* remove shadow forbottom line */
+.container-panel {
+    position: relative;
+    padding: 20px 0px 20px 0px;
+    color: #EEE;
+	background-color: #FFFFFF;
+   -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+	box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+ }
+
+/* http://css-tricks.com/perfect-full-page-background-image/*/
+
+.container-image {
+    position: relative;
+    padding: 20px 0px 20px 0px;
+    color: #000;
+    background-image: url('');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-size: 1440px 2653px;*/
+    background-repeat:no-repeat;
+    background-color: #c3c3c3:;
+    /*display: compact;*/
+}
+.heading, .subheading {
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+ p.lead {
+    padding-top: 1.5%;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+p {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.actions { 
+    padding: 3% 0%;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+ }
+ .video, .thermometer, .order, .social, .statistics {
+    text-align: center;
+  }
+.statistics h3, .statistics p {
+    color: #0C0D11;
+ }
+.accordion a {
+    color: #942222;
+    font-size: 18px;
+ }
+ .white-background {
+    background-color: #FFFFFF;
+}
+.button-margin {
+    margin: 50px 0px 40px 0px;
+}
+.iconcolor {
+    color: #25857D;
+}
+
+/* Main marketing message and sign up button */
+.brand {
+   font-size: 30px; 
+}
+
+.jumbotron {
+    margin: 20px;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 54px;
+    line-height: 1;
+}
+ .jumbotron p {
+    padding-top: 1.5%;
+    font-size: 20px;
+    line-height: 30px;
+  }
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 30px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+/* Marketing Copy and Footer */
+
+.copy {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    text-align: justify;
+ }
+.asset {
+    padding: 2.5% 0%;
+ }
+.footer {
+    color: #red;
+    text-align: center;
+ }
+.footer p {
+    font-size: 11px;
+ }
+.footer a {
+    color: #ccccff;
+ }
+ 
+ /* change button color: http://twitterbootstrapbuttons.w3masters.nl/?color=%2325857D */
+.btn-custom-darken.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-custom-darken {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #21756e;
+  background-image: -moz-linear-gradient(top, #25857d, #1a5d58);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#25857d), to(#1a5d58));
+  background-image: -webkit-linear-gradient(top, #25857d, #1a5d58);
+  background-image: -o-linear-gradient(top, #25857d, #1a5d58);
+  background-image: linear-gradient(to bottom, #25857d, #1a5d58);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff25857d', endColorstr='#ff1a5d58', GradientType=0);
+  border-color: #1a5d58 #1a5d58 #09211f;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #1a5d58;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-custom-darken:hover,
+.btn-custom-darken:focus,
+.btn-custom-darken:active,
+.btn-custom-darken.active,
+.btn-custom-darken.disabled,
+.btn-custom-darken[disabled] {
+  color: #ffffff;
+  background-color: #1a5d58;
+  *background-color: #144945;
+}
+.btn-custom-darken:active,
+.btn-custom-darken.active {
+  background-color: #0f3532 ;
+}
+
+.btn-customred-darken.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-customred-darken {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #ad3232;
+  background-image: -moz-linear-gradient(top, #bd3737, #952c2c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bd3737), to(#952c2c));
+  background-image: -webkit-linear-gradient(top, #bd3737, #952c2c);
+  background-image: -o-linear-gradient(top, #bd3737, #952c2c);
+  background-image: linear-gradient(to bottom, #bd3737, #952c2c);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbd3737', endColorstr='#ff952c2c', GradientType=0);
+  border-color: #952c2c #952c2c #5a1a1a;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #952c2c;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-customred-darken:hover,
+.btn-customred-darken:focus,
+.btn-customred-darken:active,
+.btn-customred-darken.active,
+.btn-customred-darken.disabled,
+.btn-customred-darken[disabled] {
+  color: #ffffff;
+  background-color: #952c2c;
+  *background-color: #822626;
+}
+.btn-customred-darken:active,
+.btn-customred-darken.active {
+  background-color: #6e2020 ;
+}
+
+/* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-centre-position */
+div.addthis_toolbox {
+  width: 180px;
+  margin: 0 auto;
+}
     </style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42968214-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
   </head>
-  <body>
-    <div class="container">
-      <div class="row navigation">
-        <div class="span2 logo">
-          Logo
+   <body>
+  
+    <!-- Mobile-friendly navbar adapted from example. -->
+    <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+    
+ <div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="brand" href="#">2.5 Startups</a>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+</div>
+<div class="container-panel">
+	<div class="container-narrow-top">
+		<div class="jumbotron">
+			<h1>
+				2.5 Startups.
+			</h1>
+			<p >
+				Desarrolla un eco-sistema Cooperativo de Startups: Crea una cooperativa de Startups, cMOOCS y Reality Shows en 2.5 Startups,
+				Busqueda de miembros y personas interesadas en cualquier area como el primer paso. Startups 2.5 se encarga de darte las herramientas necesarias para el desarrollo de tu proyecto.
+			</p>
+			<a class="btn btn-large btn-customred-darken" href="#">Apuntate ahora!</a>
+		</div>
+	</div>
+</div>
+<div class="container-image">
+	<div class="container-narrow">
+		<div class="row-fluid marketing">
+			<div class="span8 copy copy-left">
+				<h4>
+					<i class="icon-home iconcolor icon-4x"></i>
+					Desarrolla tu Creatividad
+				</h4>
+				<p class="copy">
+					Desarrolla tu creatividad en 2.5 Startups. Describe tu proyecto y crea tu plan, comparte tu conocimiento con un MOOC y un Reality Show.</p>
+			</div>
+			<div class="span4 asset">
+					<img src="http://farm8.staticflickr.com/7428/9646362149_67828c8443.jpg" width="350" height="300" class="img-rounded"
+				alt="Share">
+			</div>
+		</div>
+		<div class="row-fluid marketing">
+			<div class="span8 copy copy-left">
+				<h4>
+					<i class="icon-comment iconcolor icon-4x"></i>
+					Promueve tu proyecto con un MOOC
+				</h4>
+				<p class="copy">
+					Usa  2.5 Startups social para promover tu Startup al publico y a la vez compartir tu conocimiento.					
+				</p>
+			</div>
+			<div class="span4 asset">
+			<img src="http://farm4.staticflickr.com/3690/9649991866_77b3242b23.jpg" width="300" height="292" class="img-rounded"
+				alt="Promote">
+			</div>
+		</div>
+		<div class="row-fluid marketing">
+			<div class="span8 copy copy-left">
+				<h4>
+					<!-- change to icon-group -->
+					<i class="icon-group iconcolor icon-4x"></i>
+					Coopera y comparte
+				</h4>
+				<p class="copy">
+					Usa 2.5 Startups junto a un Reality Show para discutir y comentar ideas.
+				</p>
+			</div>
+			<div class="span4 asset">
+					<img src="http://farm6.staticflickr.com/5345/9646784681_38825f9573.jpg" width="350" height="300" class="img-rounded"
+				alt="Share">
+			</div>
+		</div>
+		<div class="row-fluid marketing">
+			<div class="span8 copy copy-left">
+				<h4>
+					<i class="icon-heart iconcolor icon-4x"></i>
+					Support 2.5 Startups
+				</h4>
+                        
+				<div class="statistics">
+					<div class="span4">
+						<!-- linediv-l and linediv-r give dividing lines that look different in
+						horizontal and vertical layouts, illustrating media queries. -->
+						<div class="linediv-l">
+							<h3>
+								100
+							</h3>
+							<p>
+								backers
+							</p>
+						</div>
+					</div>
+					<div class="span4">
+						<div class="linediv-c">
+							<h3>
+								$6000
+							</h3>
+							<p>
+								of $40,000
+							</p>
+						</div>
+					</div>
+					<div class="span4">
+						<div class="linediv-r">
+							<h3>
+								100
+							</h3>
+							<p>
+								days left
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="span10 offset1">
+					<!-- Bootstrap progress bar -->
+					<!-- http://twitter.github.io/bootstrap/components.html#progress -->
+					<div class="progress progress-danger">
+						<div class="bar" style="width: 10%">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span4 asset">
+                       
+				<div class="span12 order">
+					<!-- Standard Bootstrap button. -->
+					<!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
+					 
+                             
+				</div>
+				<div class="span12 social">
+                        <a class="coinbase-button" data-code="d45e798478890fe765bfad461ec2ff70" data-button-style="custom_small" href="https://coinbase.com/checkouts/d45e798478890fe765bfad461ec2ff70">Pay With Bitcoin</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+					<a class="addthis_button_facebook"></a>
+					<a class="addthis_button_twitter"></a>
+					<a class="addthis_button_pinterest_share"></a>
+					<a class="addthis_button_google_plusone_share"></a>
+					<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+				</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51ff5e6e31bc0628"></script>
+				<!-- AddThis Button END -->
+				</div>
+			</div>
+		</div>
+		<!-- For the FAQ, we introduce a little bit of JS, using the accordion.
+		-->
+		<!-- This brings in jquery.js and bootstrap.js as dependencies. -->
+		<!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
+		<div class="row-fluid faq">
+			<div class="span12">
+				<h3>
+					FAQ
+				</h3>
+				<div class="accordion" id="accordion2">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+							href="#collapseOne">
+                    Por que 2.5 Startups?
+                  </a>
+						</div>
+						<div id="collapseOne" class="accordion-body in collapse" style="height: auto;">
+							<div class="accordion-inner">
+								2.5 startups es una alternativa para innovar en Mexico. Old media + Reality Shows + Startups + cMOOCS.  Build a Hub! 
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+							href="#collapseTwo">
+                    Como Funciona?
+                  </a>
+						</div>
+						<div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
+							<div class="accordion-inner">
+								Sencillo de forma colaborativa, un Reality Show donde se muestra el proceso,
+                                                un MOOC donde todos aprenden, Startups donde lo que deseen crean. </div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+							href="#collapseThree">
+                    Para quien es 2.5 Startups?
+                  </a>
+						</div>
+						<div id="collapseThree" class="accordion-body collapse" style="height: 0px;">
+							<div class="accordion-inner">
+								Es para todos.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+							href="#collapseFour">
+                    Como te ayuda 2.5 Startups?
+                  </a>
+						</div>
+						<div id="collapseFour" class="accordion-body collapse" style="height: 0px;">
+							<div class="accordion-inner">
+								2.5 Startups es acerca de la gente, de la coneccion entre todos, de la red.
+                                                Somos la RED.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row-fluid footer">
+			<div class="span12">
+				<p>
+					This work is licensed under the
+					<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC
+              By-SA 3.0
+            </a>
+					2.5 Startups.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /container -->
+<div class="container-narrow-top">
+		<div class="jumbotron">
+
+        	<h4>3 Ways to Show Support:</h4><br/>
+        	<p>1) Twitter love: <a href="https://twitter.com/share" class="twitter-share-button" data-via="anando9" data-count="none" data-hashtags="crowdfunding">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+        	<p>2) Donate!  Everyone donating at least .2 bitcoins will be part of the production team.</p>
+         	<a class="coinbase-button" data-code="d45e798478890fe765bfad461ec2ff70" data-button-style="custom_small" href="https://coinbase.com/checkouts/d45e798478890fe765bfad461ec2ff70">Pay With Bitcoin</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+
+         	<p>3) Share with friends!</p>
+
+           <p><b>2.5 Startup!</b> crowdfunding campaign was started as the final project for <a href="https://www.coursera.org/course/startup">Stanford Startup Engineering</a> class.</p>
+           <p> and <a href="https://www.coursera.org/course/creatividad">Ser mas creativos</a> class.</p>
         </div>
-        <div class="span6 blank">
-          Blank
-        </div>
-        <div class="span4 about">
-          About
-        </div>
-      </div>
-      <div class="row heading">
-        <div class="span12">
-          <h1>Bitstarter Title</h1>
-        </div>
-      </div> 
-     <div class="row subheading">
-        <div class="span12">
-          <p class="lead">This is my first bitstarter project.</p>
-        </div>
-      </div>
-      <div class="row pitch">
-        <div class="span6 video">
-          Video
-        </div>
-        <div class="span6">
-          <div class="thermometer">
-            Thermometer
-          </div>
-          <div class="order">
-            Order
-          </div>
-          <div class="social">
-            Social
-          </div>
-        </div>
-      </div>
-      <div class="row section1">
-        <div class="span12">
-          Marketing Section 1
-        </div>
-      </div>
-      <div class="row section2">
-        <div class="span12">
-          Marketing Section 2
-        </div>
-      </div>
-      <div class="row faq">
-        <div class="span12">
-          FAQ
-        </div>
-      </div>
-      <div class="row footer">
-        <div class="span12">
-          Footer
-        </div>
-      </div>
-    </div>
+</div>
+
   </body>
 </html>
